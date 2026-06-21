@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PODSTAWOWE METADANE SEO -->
+    <title>mgr Ewa Perłowska - Psycholog i Psychoterapeutka Wrocław | CBT</title>
+    <meta name="description" content="Profesjonalna psychoterapia poznawczo-behawioralna (CBT) we Wrocławiu. Mgr Ewa Perłowska – certyfikowany psycholog i psychoterapeuta. Pomoc w depresji, lękach, diagnoza ADHD.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ewaperlowska.github.io/psycholog-wroclaw/"> 
+
+    <!-- OPEN GRAPH (Dla Facebooka / Social Media) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="mgr Ewa Perłowska - Psycholog i Psychoterapeutka Wrocław">
+    <meta property="og:description" content="Certyfikowana psychoterapeutka CBT we Wrocławiu. Skuteczna pomoc psychologiczna, terapia lęków, depresji, diagnoza ADHD. Umów wizytę.">
+    <meta property="og:url" content="https://ewaperlowska.github.io/psycholog-wroclaw/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET I STYLE GLOBALNE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4a5d4e; /* Stonowana zieleń gabinetowa */
+            --secondary-color: #8f9f91;
+            --bg-light: #f9f8f6; /* Ciepły beż */
+            --text-dark: #2c3e35;
+            --text-muted: #606f66;
+            --white: #ffffff;
+            --accent: #d4a373;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* SEO: Ukrycie nagłówka H1 przeznaczonego wyłącznie dla robotów Google */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            margin: 15px auto 0;
+        }
+
+        /* --- NAWIGACJA --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            background: linear-gradient(rgba(74, 93, 78, 0.8), rgba(74, 93, 78, 0.4)), url('ewa_zdjecie_glowne.jpg') center/cover;
+            background-color: var(--primary-color); 
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* --- O MNIE --- */
+        .about-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            max-width: 400px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1.5;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .about-text h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--accent);
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .badge {
+            background-color: #edf1ee;
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- GALERIE ZDJĘĆ --- */
+        .gallery-section {
+            background-color: var(--white);
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin: 40px 0 20px;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 6px;
+            height: 380px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- CENNIK --- */
+        .price-table {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 40px;
+            border-bottom: 1px solid #edf1ee;
+            align-items: center;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .service-time {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        .service-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* --- KONTAKT --- */
+        .contact-section {
+            background-color: var(--white);
+        }
+
+        .contact-wrapper {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .contact-item p, .contact-item a {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a[href^="tel:"], .contact-item a[href^="mailto:"] {
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .external-profile {
+            margin-top: 20px;
+        }
+
+        .btn-external {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-external:hover {
+            background-color: var(--accent);
+        }
+
+        .contact-map {
+            flex: 1;
+            height: 450px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- STOPKA --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSYWNOŚĆ (MOBILE) --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+
+            .about-wrapper, .contact-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .about-img {
+                max-width: 100%;
+                position: static;
+            }
+
+            .price-row {
+                padding: 20px;
+            }
+
+            .contact-map {
+                height: 300px;
+            }
+        }
+    </style>
+
+    <!-- DANE STRUKTURALNE SCHEMA.ORG (Dla lepszych wyników lokalnych w Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "mgr Ewa Perłowska - Psycholog i Psychoterapeutka Wrocław",
+      "image": "https://ewaperlowska.github.io/psycholog-wroclaw/ewa_zdjecie_glowne.jpg",
+      "telephone": "+48739111849",
+      "email": "eperlowska@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Aleja Wiśniowa 4-6",
+        "addressLocality": "Wrocław",
+        "postalCode": "53-137",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.086745,
+        "longitude": 17.021021
+      },
+      "url": "https://twojadomena.pl/",
+      "priceRange": "50zł - 800zł",
+      "medicalSpecialty": "Psychiatry",
+      "description": "Gabinet psychoterapii poznawczo-behawioralnej (CBT) we Wrocławiu. Terapia indywidualna dorosłych, leczenie lęków, depresji oraz diagnoza ADHD."
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAWIGACJA -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="#">mgr Ewa Perłowska</a>
+            </div>
+            <!-- Zmiana nawigacji na tag <nav> dla lepszej semantyki SEO -->
+            <nav aria-label="Menu główne">
+                <ul class="nav-links">
+                    <li><a href="#o-mnie">O mnie</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#cennik">Cennik</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER GŁÓWNY -->
+    <section class="hero">
+        <div class="container">
+            <!-- SEO H1: Robot widzi słowa kluczowe na samej górze kodu strony, użytkownik widzi estetyczne H2 -->
+            <h1 class="visually-hidden">Psycholog, Psychoterapeuta Wrocław - mgr Ewa Perłowska</h1>
+            <h2>mgr Ewa Perłowska</h2>
+            <p>Psycholog, certyfikowana psychoterapeutka poznawczo-behawioralna (CBT) we Wrocławiu</p>
+        </div>
+    </section>
+
+    <!-- O MNIE -->
+    <section id="o-mnie" class="container">
+        <h2 class="section-title">O mnie – Gabinet Psychoterapii Wrocław</h2>
+        <div class="about-wrapper">
+            <div class="about-img">
+                <img src="ewa_zdjecie_glowne.jpg" alt="mgr Ewa Perłowska - Certyfikowana Psychoterapeutka CBT Wrocław">
+            </div>
+            <div class="about-text">
+                <h3>Profesjonalna pomoc psychoterapeutyczna we Wrocławiu</h3>
+                <h4>Certyfikowana psychoterapeutka (nr certyfikatu 1695)</h4>
+                
+                <p>Jestem psychologiem, certyfikowaną psychoterapeutką poznawczo-behawioralną. Ukończyłam psychologię na Uniwersytecie Wrocławskim oraz czteroletni kurs psychoterapii w Centrum CBT w Warszawie. Stale doskonalę swój warsztat pracy podczas szkoleń oraz regularnych superwizji. Jestem członkinią Polskiego Towarzystwa Terapii Poznawczo-Behawioralnej, pracuję w oparciu o Kodeks Etyczny Towarzystwa. Oprócz podejścia poznawczo-behawioralnego, w swojej pracy wykorzystuję również elementy terapii schematów oraz innych narzędzi tzw. trzeciej fali.</p>
+                
+                <p>Doświadczenie zawodowe zdobywałam podczas praktyk i staży w: Pracowni Konsultacji i Poradnictwa Psychologicznego przy UWr, Centrum Neuropsychiatrii Neuromed, na Oddziale Psychiatrycznym dla Dzieci i Młodzieży w Wojewódzkim Szpitalu Specjalistycznym im. J. Gromkowskiego we Wrocławiu oraz podczas pracy w placówkach opiekuńczo-wychowawczych i szkole podstawowej. Prowadzeniem psychoterapii zajmuję się od 2019 roku.</p>
+                
+                <p><strong>Jak pracuję?</strong> Wiem, że przychodząc na pierwsze spotkanie z psychoterapeutą możesz być pełna/pełen obaw i wątpliwości. W związku z tym w pierwszej kolejności staram się stworzyć przyjazną atmosferę, abyś czuła/czuł się komfortowo i mogła/mógł opowiedzieć mi o sobie oraz o problemie, nad którym chcesz pracować. Jednocześnie szanuję Twoje granice – to Ty decydujesz co i kiedy mi powiesz.</p>
+                
+                <div class="badges">
+                    <span class="badge">Nurt poznawczo-behawioralny (CBT)</span>
+                    <span class="badge">Terapia schematu</span>
+                    <span class="badge">Praca pod stałą superwizją</span>
+                    <span class="badge">Przyjazna LGBT+</span>
+                    <span class="badge">7 lat doświadczenia</span>
+                </div>
+
+                <h3 style="font-size: 1.4rem; margin-top: 30px; margin-bottom: 15px;">Główne obszary pomocy psychologicznej:</h3>
+                <p>Specjalizuję się w terapii indywidualnej osób dorosłych zmagających się m.in. z: zaburzeniami lękowymi (fobia społeczna, lęk uogólniony GAD, OCD), zaburzeniami nastroju i osobowości (depresja, borderline, osobowość narcystyczna) oraz zaburzeniami neurorozwojowymi (wsparcie osób z ADHD).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE ZDJĘĆ -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galeria gabinetu</h2>
+            
+            <h3 class="gallery-title">Mój gabinet psychoterapii (Wrocław)</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="galeria_gabinet.jpg" alt="Gabinet psychoterapii Wrocław - wnętrze miejsca spotkań"></div>
+                <div class="gallery-item"><img src="galeria_gabinet_poczekalnia.jpeg" alt="Poczekalnia i korytarz w gabinecie psychologicznym we Wrocławiu"></div>
+            </div>
+
+            <h3 class="gallery-title">Zdjęcia profilowe</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="ewa_galeria.jpg" alt="mgr Ewa Perłowska – psycholog we Wrocławiu"></div>
+                <div class="gallery-item"><img src="ewa_galeria_2.jpg" alt="mgr Ewa Perłowska przy pracy terapeutycznej"></div>
+            </div>
+
+            <h3 class="gallery-title">Certyfikaty i Dyplomy</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="galeria_certyfikat.jpg" alt="Certyfikat Psychoterapeuty CBT nr 1695 - Ewa Perłowska"></div>
+                <div class="gallery-item"><img src="galeria_dyplom_ukonczenia_studiow_wyzszych.jpeg" alt="Dyplom psychologa Uniwersytetu Wrocławskiego"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENNIK -->
+    <section id="cennik">
+        <div class="container">
+            <h2 class="section-title">Cennik usług psychologicznych</h2>
+            <div class="price-table">
+                <div class="price-row">
+                    <div>
+                        <span class="service-name">Konsultacja psychologiczna</span>
+                        <span class="service-time">Czas trwania: 50 minut</span>
+                    </div>
+                    <div class="service-price">220 zł</div>
+                </div>
+                <div class="price-row">
+                    <div>
+                        <span class="service-name">Psychoterapia indywidualna</span>
+                        <span class="service-time">Czas trwania: 50 minut</span>
+                    </div>
+                    <div class="service-price">220 zł</div>
+                </div>
+                <div class="price-row">
+                    <div>
+                        <span class="service-name">Diagnoza ADHD za pomocą DIVA-5</span>
+                        <span class="service-time">Pakiet diagnostyczny • 2 spotkania</span>
+                    </div>
+                    <div class="service-price">800 zł</div>
+                </div>
+                <div class="price-row">
+                    <div>
+                        <span class="service-name">Zaświadczenie o przebiegu terapii</span>
+                        <span class="service-time">Wydanie oficjalnego dokumentu</span>
+                    </div>
+                    <div class="service-price">50 zł</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Kontakt i Rezerwacja wizyt – Wrocław</h2>
+            <div class="contact-wrapper">
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Adres gabinetu stacjonarnego</h4>
+                        <p>Aleja Wiśniowa 4-6<br>53-137 Wrocław</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Telefon kontaktowy</h4>
+                        <p><a href="tel:+48739111849" title="Zadzwoń do gabinetu">+48 739 111 849</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Adres e-mail</h4>
+                        <p><a href="mailto:eperlowska@gmail.com" title="Napisz wiadomość e-mail">eperlowska@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="contact-item external-profile">
+                        <h4>Rezerwacja wizyt online:</h4>
+                        <a href="https://twojpsycholog.pl/profil-psychologa/ewa-perlowska-4713" target="_blank" rel="noopener noreferrer" class="btn-external" title="Umów wizytę przez portal TwójPsycholog">Umów wizytę na TwójPsycholog.pl</a>
+                    </div>
+                </div>
+
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.1772413725534!2d17.021021477157833!3d51.086745141416704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fc26bc5752eb7%3A0x6b63c9b740ef8dc4!2sAleja%20Wi%C5%9Bniowa%204-6%2C%2053-137%20Wroc%C5%82aw!5e0!3m2!1spl!2spl!4v1710000000000!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa dojazdu do gabinetu we Wrocławiu"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STOPKA -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 mgr Ewa Perłowska - Psychoterapia Wrocław. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
